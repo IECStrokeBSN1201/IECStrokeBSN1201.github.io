@@ -40,7 +40,6 @@
   background: #facc15;
   bottom: 10%;
   right: -120px;
-  animation-delay: 2s;
 }
 
 .circle.pink {
@@ -49,7 +48,6 @@
   background: #f87171;
   top: 60%;
   left: 60%;
-  animation-delay: 4s;
 }
 
 @keyframes float {
@@ -65,32 +63,35 @@
 
 /* HERO */
 .hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 80px 20px;
   color: white;
+  position: relative;
+  transition: 0.6s ease;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("your-image.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(0.6);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+.hero.fade {
   opacity: 0;
-  transform: scale(1.05);
-  transition: all 1s ease;
+  transform: translateY(-40px);
 }
 
-.hero.hero-show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.hero h1 {
-  font-size: 42px;
-  font-weight: 800;
-}
-
-.hero .sub {
-  margin-top: 10px;
-}
-
-/* HERO BOX */
 .hero-box {
   margin-top: 20px;
-  padding: 40px;
+  padding: 30px;
   border: 2px dashed white;
   border-radius: 12px;
 }
@@ -99,14 +100,29 @@
 .section {
   max-width: 1100px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 50px 20px;
 }
 
 h2 {
   color: #dc2626;
-  font-size: 26px;
-  margin-bottom: 20px;
-  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+h2:hover {
+  color: #facc15;
+  transform: translateX(5px);
+}
+
+/* COLLAPSE */
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.collapse-content.active {
+  max-height: 600px;
 }
 
 /* GLASS */
@@ -131,8 +147,8 @@ h2 {
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease;
+  transform: translateY(20px);
+  transition: 0.6s ease;
 }
 
 .card.show {
@@ -140,13 +156,20 @@ h2 {
   transform: translateY(0);
 }
 
-.card h3 {
-  color: #b91c1c;
-}
-
 .card.danger {
   background: #ef4444;
   color: white;
+}
+
+/* PROGRESS BAR */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #facc15;
+  z-index: 999;
 }
 
 /* FOOTER */
@@ -155,5 +178,4 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
 }
