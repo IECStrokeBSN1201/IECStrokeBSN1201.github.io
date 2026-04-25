@@ -160,3 +160,156 @@ h2:hover {
   color: #facc15;
   transform: translateX(5px);
 }
+
+/* ========================= */
+/* 🔥 GLOBAL SPACING UPGRADE */
+/* ========================= */
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px; /* increased spacing */
+}
+
+/* ========================= */
+/* 🔥 GLASS CARD UPGRADE */
+/* ========================= */
+
+.glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  line-height: 1.7;
+}
+
+/* ========================= */
+/* 🔥 GRID IMPROVEMENT */
+/* ========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px; /* more spacing */
+  margin-top: 20px;
+}
+
+/* ========================= */
+/* 🔥 CARD REDESIGN */
+/* ========================= */
+
+.card {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: all 0.5s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle gradient glow */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(239,68,68,0.15), rgba(250,204,21,0.15));
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ========================= */
+/* 🔥 CARD TYPOGRAPHY */
+/* ========================= */
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #b91c1c;
+}
+
+.card p,
+.card li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* 🔥 BIG FEATURE CARDS */
+/* ========================= */
+
+.glass ul {
+  display: grid;
+  gap: 10px;
+}
+
+.glass ul li {
+  background: rgba(255,255,255,0.7);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+/* ========================= */
+/* 🔥 DANGER CARD */
+/* ========================= */
+
+.card.danger {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+  box-shadow: 0 10px 30px rgba(239,68,68,0.4);
+}
+
+/* ========================= */
+/* 🔥 HERO POLISH */
+/* ========================= */
+
+.hero {
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* ========================= */
+/* 🔥 SECTION TITLE STYLE */
+/* ========================= */
+
+h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 3px;
+  background: #facc15;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+}
