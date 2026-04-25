@@ -119,3 +119,44 @@ body {
   width:90%;
   max-width:500px;
 }
+
+/* COLLAPSIBLE */
+.hidden-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.hidden-content.active {
+  max-height: 800px;
+}
+
+/* CARD EXPAND */
+.card .extra {
+  opacity: 0;
+  max-height: 0;
+  transition: 0.4s ease;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.card.expanded .extra {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* SECTION TITLE INTERACTIVE */
+h2 {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+h2:hover {
+  color: #facc15;
+  transform: translateX(5px);
+}
