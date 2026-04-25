@@ -1,40 +1,59 @@
-// HERO ANIMATION
+// HERO LOAD ANIMATION
 window.addEventListener("load", () => {
   document.querySelector(".hero").classList.add("show");
 });
 
-// SCROLL REVEAL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll(".card").forEach(el => observer.observe(el));
-
-// PARALLAX CIRCLES
+// HERO FADE ON SCROLL + PROGRESS BAR
 window.addEventListener("scroll", () => {
   const y = window.scrollY;
-
-  document.querySelectorAll(".circle").forEach((c, i) => {
-    c.style.transform = `translateY(${y * (0.1 + i * 0.05)}px)`;
-  });
-
-  // HERO FADE OUT
   const hero = document.querySelector(".hero");
+
   if (y > 200) hero.classList.add("fade");
   else hero.classList.remove("fade");
 
-  // PROGRESS BAR
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = (y / docHeight) * 100;
+  const height = document.body.scrollHeight - window.innerHeight;
+  const progress = (y / height) * 100;
   document.getElementById("progress").style.width = progress + "%";
 });
 
-// ACCORDION TOGGLE
-function toggleSection(el) {
-  const content = el.nextElementSibling;
-  content.classList.toggle("active");
+// COLLAPSE FUNCTION (keeps your structure intact)
+function toggleCollapse(el) {
+  const section = el.nextElementSibling;
+  section.classList.toggle("active");
 }
+
+// MODAL DATA
+const modalData = {
+  ischaemic: `
+    <h2>Ischemic Stroke</h2>
+    <p>Blockage of blood vessel in the brain.</p>
+  `,
+  hemorrhagic: `
+    <h2>Hemorrhagic Stroke</h2>
+    <p>Rupture of blood vessel causing bleeding in the brain.</p>
+  `,
+  ischemic_treat: `
+    <h2>Ischemic Treatment</h2>
+    <p>tPA, thrombectomy, anticoagulants</p>
+  `,
+  hemorrhagic_treat: `
+    <h2>Hemorrhagic Treatment</h2>
+    <p>Surgery, pressure control, hematoma removal</p>
+  `
+};
+
+// OPEN MODAL
+function openModal(key) {
+  document.getElementById("modal").classList.remove("hidden");
+  document.getElementById("modal-content").innerHTML = modalData[key];
+}
+
+// CLOSE MODAL
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+
+// CLOSE ON OUTSIDE CLICK
+document.getElementById("modal").addEventListener("click", (e) => {
+  if (e.target.id === "modal") closeModal();
+});
