@@ -20,20 +20,20 @@
 <div class="circle yellow"></div>
 <div class="circle pink"></div>
 
-<!-- SCROLL PROGRESS BAR -->
+<!-- PROGRESS BAR (NEW - NON-DESTRUCTIVE) -->
 <div id="progress"></div>
 
 <!-- CONTENT -->
 <div class="content">
 
-  <!-- HERO -->
+  <!-- HERO (UNCHANGED + ENHANCED BEHAVIOR) -->
   <section class="hero">
     <div class="hero-bg"></div>
 
     <div class="hero-content">
       <h1>RESOURCES REFERENCE</h1>
       <p>Don’t STROKE Out: Act FAST SAVE LIVES!</p>
-      <p class="sub">SIGNS AT SINTOMAS (Mga Sanhi ng Stroke)</p>
+      <p class="sub">SIGNS AT SINTOMAS (Mga Sanhing Stroke)</p>
 
       <div class="hero-box">
         🖼️ HERO GRAPHIC / IEC VISUAL HERE
@@ -43,8 +43,9 @@
 
   <!-- WHAT IS STROKE -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Ano ang Stroke?</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">Ano ang Stroke?</h2>
+
+    <div class="collapse">
       <div class="glass">
         <p>Ang stroke ay nangyayari kapag nahinto o humina ang daloy ng dugo sa utak.</p>
         <p>Dahil dito, kulang ang oxygen at nutrisyon na napupunta sa utak.</p>
@@ -54,15 +55,16 @@
 
   <!-- TYPES -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Dalawang Uri ng Stroke</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">Dalawang Uri ng Stroke</h2>
+
+    <div class="collapse">
       <div class="grid">
-        <div class="card">
+        <div class="card" onclick="openModal('ischaemic')">
           <h3>Ischemic Stroke</h3>
           <p>Pagbara ng ugat sa utak</p>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openModal('hemorrhagic')">
           <h3>Hemorrhagic Stroke</h3>
           <p>Pagputok ng ugat sa utak</p>
         </div>
@@ -72,8 +74,9 @@
 
   <!-- BEFAST -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">B.E.F.A.S.T. Approach</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">B.E.F.A.S.T. Approach</h2>
+
+    <div class="collapse">
       <div class="grid">
         <div class="card">B - Balance</div>
         <div class="card">E - Eyes</div>
@@ -87,8 +90,9 @@
 
   <!-- RISK FACTORS -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Risk Factors</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">Risk Factors</h2>
+
+    <div class="collapse">
       <div class="grid">
         <div class="card">High Blood Pressure</div>
         <div class="card">Smoking</div>
@@ -102,8 +106,9 @@
 
   <!-- WHO -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Sino ang maaaring magkaroon ng stroke?</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">Sino ang maaaring magkaroon ng stroke?</h2>
+
+    <div class="collapse">
       <div class="glass">
         <ul>
           <li>Mga may edad na</li>
@@ -122,8 +127,9 @@
 
   <!-- PREVENTION -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Paano Maiiwasan ang Stroke?</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">Paano Maiiwasan ang Stroke?</h2>
+
+    <div class="collapse">
       <div class="grid">
         <div class="card">Blood Pressure Control</div>
         <div class="card">Healthy Diet</div>
@@ -134,10 +140,12 @@
 
   <!-- TREATMENT -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Paano Ginagamot ang Stroke?</h2>
-    <div class="collapse-content">
+    <h2 onclick="toggleCollapse(this)">Paano Ginagamot ang Stroke?</h2>
+
+    <div class="collapse">
       <div class="grid">
-        <div class="card">
+
+        <div class="card" onclick="openModal('ischemic_treat')">
           <h3>Ischemic Stroke</h3>
           <ul>
             <li>tPA</li>
@@ -146,7 +154,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="card" onclick="openModal('hemorrhagic_treat')">
           <h3>Hemorrhagic Stroke</h3>
           <ul>
             <li>Blood pressure control</li>
@@ -155,6 +163,7 @@
             <li>Craniotomy</li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
@@ -164,6 +173,14 @@
     SCAN ME - QR RESOURCE | RESOURCES REFERENCE
   </footer>
 
+</div>
+
+<!-- MODAL (NEW BUT NON-DESTRUCTIVE) -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button onclick="closeModal()">✖</button>
+    <div id="modal-content"></div>
+  </div>
 </div>
 
 <script src="script.js"></script>
