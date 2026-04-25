@@ -1,50 +1,50 @@
-// HERO LOAD
+// HERO ANIMATION
 window.addEventListener("load", () => {
-  document.querySelector(".hero").classList.add("show");
+  document.querySelector(".hero").classList.add("hero-show");
 });
 
-// SCROLL EFFECTS
+// HERO FADE ON SCROLL
 window.addEventListener("scroll", () => {
-  const hero = document.querySelector(".hero");
-
-  if (window.scrollY > 200) {
-    hero.classList.add("fade");
+  const hero = document.getElementById("hero");
+  if (window.scrollY > 150) {
+    hero.style.opacity = "0.3";
   } else {
-    hero.classList.remove("fade");
+    hero.style.opacity = "1";
   }
-
-  const height = document.body.scrollHeight - window.innerHeight;
-  const progress = (window.scrollY / height) * 100;
-  document.getElementById("progress").style.width = progress + "%";
 });
 
-// CARD ANIMATION
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add("show");
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".card").forEach(el => observer.observe(el));
+
+// COLLAPSIBLE SECTIONS
+function toggleSection(el) {
+  const content = el.parentElement.querySelector(".hidden-content") 
+               || el.nextElementSibling;
+
+  content.classList.toggle("active");
+}
+
+// EXPANDABLE CARDS
+document.querySelectorAll(".expandable").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("expanded");
   });
 });
 
-document.querySelectorAll(".card").forEach(c => observer.observe(c));
+// PARALLAX FLOATING CIRCLES
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
 
-// COLLAPSE
-function toggleCollapse(el) {
-  el.nextElementSibling.classList.toggle("active");
-}
-
-// MODAL DATA
-const modalData = {
-  ischaemic: "<h2>Ischemic Stroke</h2><p>Blockage of blood vessel.</p>",
-  hemorrhagic: "<h2>Hemorrhagic Stroke</h2><p>Bleeding in brain.</p>",
-  ischemic_treat: "<h2>Treatment</h2><p>tPA, thrombectomy</p>",
-  hemorrhagic_treat: "<h2>Treatment</h2><p>Surgery, pressure control</p>"
-};
-
-function openModal(key) {
-  document.getElementById("modal").classList.remove("hidden");
-  document.getElementById("modal-content").innerHTML = modalData[key];
-}
-
-function closeModal() {
-  document.getElementById("modal").classList.add("hidden");
-}
+  document.querySelectorAll(".circle").forEach((circle, i) => {
+    const speed = (i + 1) * 0.15;
+    circle.style.transform = `translateY(${scrollY * speed}px)`;
+  });
+});
