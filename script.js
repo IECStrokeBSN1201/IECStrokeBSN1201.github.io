@@ -1,4 +1,4 @@
-// COLLAPSE SECTIONS
+// COLLAPSE
 function toggleSection(el) {
   const content =
     el.parentElement.querySelector(".hidden-content") ||
@@ -9,32 +9,46 @@ function toggleSection(el) {
   content.classList.toggle("active");
 }
 
-// SCROLL REVEAL ANIMATION
+// SCROLL REVEAL (STAGGERED)
+const cards = document.querySelectorAll(".card");
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll(".card").forEach(card => {
+cards.forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.05}s`;
   observer.observe(card);
 });
 
-// EXPANDABLE CARDS
+// EXPANDABLE
 document.querySelectorAll(".expandable").forEach(card => {
   card.addEventListener("click", () => {
     card.classList.toggle("expanded");
   });
 });
 
-// PARALLAX FLOATING CIRCLES
+// PARALLAX BLOBS
 window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
+  const y = window.scrollY;
 
-  document.querySelectorAll(".circle").forEach((circle, i) => {
-    const speed = (i + 1) * 0.15;
-    circle.style.transform = `translateY(${scrollY * speed}px)`;
+  document.querySelectorAll(".circle").forEach((c, i) => {
+    const speed = (i + 1) * 0.2;
+    c.style.transform = `translateY(${y * speed}px)`;
   });
 });
+
+// SUBTLE HEADER FLOAT
+setInterval(() => {
+  const header = document.querySelector(".header-card");
+  if (header) {
+    header.style.transform = "translateY(-3px)";
+    setTimeout(() => {
+      header.style.transform = "translateY(0)";
+    }, 800);
+  }
+}, 2000);
