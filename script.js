@@ -1,19 +1,15 @@
-// HERO ANIMATION
-window.addEventListener("load", () => {
-  document.querySelector(".hero").classList.add("hero-show");
-});
+// COLLAPSE SECTIONS
+function toggleSection(el) {
+  const content =
+    el.parentElement.querySelector(".hidden-content") ||
+    el.nextElementSibling;
 
-// HERO FADE ON SCROLL
-window.addEventListener("scroll", () => {
-  const hero = document.getElementById("hero");
-  if (window.scrollY > 150) {
-    hero.style.opacity = "0.3";
-  } else {
-    hero.style.opacity = "1";
-  }
-});
+  if (!content) return;
 
-// SCROLL REVEAL
+  content.classList.toggle("active");
+}
+
+// SCROLL REVEAL ANIMATION
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -22,15 +18,9 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".card").forEach(el => observer.observe(el));
-
-// COLLAPSIBLE SECTIONS
-function toggleSection(el) {
-  const content = el.parentElement.querySelector(".hidden-content") 
-               || el.nextElementSibling;
-
-  content.classList.toggle("active");
-}
+document.querySelectorAll(".card").forEach(card => {
+  observer.observe(card);
+});
 
 // EXPANDABLE CARDS
 document.querySelectorAll(".expandable").forEach(card => {
