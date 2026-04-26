@@ -11,6 +11,7 @@
 
 <body>
 
+<!-- GLOBAL BACKGROUND -->
 <div class="bg-fixed"></div>
 <div class="overlay"></div>
 
@@ -20,72 +21,85 @@
 
 <div class="content">
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <h1>RESOURCES REFERENCE</h1>
-    <p>Don’t STROKE Out: Act FAST SAVE LIVES!</p>
-    <p class="sub">SIGNS AT SINTOMAS (Mga Sanhing Stroke)</p>
+  <!-- HEADER (REPLACED HERO) -->
+  <section class="header">
+    <div class="header-card">
+      <h1>RESOURCES REFERENCE</h1>
+      <p>Don’t STROKE Out: Act FAST SAVE LIVES!</p>
+      <p class="sub">SIGNS AT SINTOMAS (Mga Sanhing Stroke)</p>
 
-    <div class="hero-box">
-      🖼️ HERO GRAPHIC / IEC VISUAL HERE
+      <div class="hero-box">
+        🖼️ HERO GRAPHIC / IEC VISUAL HERE
+      </div>
     </div>
   </section>
+
+  <!-- TRANSITION -->
+  <div class="transition-blur"></div>
 
   <!-- WHAT IS STROKE -->
   <section class="section">
     <div class="glass collapsible">
       <h2 onclick="toggleSection(this)">Ano ang Stroke?</h2>
       <div class="hidden-content">
-        <p>Ang stroke ay nangyayari kapag nahinto o humina ang daloy ng dugo sa utak.</p>
-        <p>Dahil dito, kulang ang oxygen at nutrisyon na napupunta sa utak.</p>
+        <div class="card">
+          <p>Ang stroke ay nangyayari kapag nahinto o humina ang daloy ng dugo sa utak.</p>
+          <p>Dahil dito, kulang ang oxygen at nutrisyon na napupunta sa utak.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- TYPES -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Dalawang Uri ng Stroke</h2>
+    <div class="glass">
+      <h2 onclick="toggleSection(this)">Dalawang Uri ng Stroke</h2>
 
-    <div class="grid hidden-content">
-      <div class="card expandable">
-        <h3>Ischemic Stroke</h3>
-        <p>Pagbara ng ugat sa utak</p>
-        <div class="extra">Blockage prevents blood flow to brain.</div>
-      </div>
+      <div class="grid hidden-content">
+        <div class="card expandable">
+          <h3>Ischemic Stroke</h3>
+          <p>Pagbara ng ugat sa utak</p>
+          <div class="extra">Blockage prevents blood flow to brain.</div>
+        </div>
 
-      <div class="card expandable">
-        <h3>Hemorrhagic Stroke</h3>
-        <p>Pagputok ng ugat sa utak</p>
-        <div class="extra">Bleeding damages brain tissue.</div>
+        <div class="card expandable">
+          <h3>Hemorrhagic Stroke</h3>
+          <p>Pagputok ng ugat sa utak</p>
+          <div class="extra">Bleeding damages brain tissue.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- BEFAST -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">B.E.F.A.S.T. Approach</h2>
+    <div class="glass">
+      <h2 onclick="toggleSection(this)">B.E.F.A.S.T. Approach</h2>
 
-    <div class="grid hidden-content">
-      <div class="card expandable">B - Balance<div class="extra">Loss of balance</div></div>
-      <div class="card expandable">E - Eyes<div class="extra">Vision problems</div></div>
-      <div class="card expandable">F - Face<div class="extra">Facial drooping</div></div>
-      <div class="card expandable">A - Arms<div class="extra">Weakness</div></div>
-      <div class="card expandable">S - Speech<div class="extra">Difficulty speaking</div></div>
-      <div class="card danger expandable">T - Time ⚠️<div class="extra">Call emergency immediately</div></div>
+      <div class="grid hidden-content">
+        <div class="card expandable">B - Balance<div class="extra">Loss of balance</div></div>
+        <div class="card expandable">E - Eyes<div class="extra">Vision problems</div></div>
+        <div class="card expandable">F - Face<div class="extra">Facial drooping</div></div>
+        <div class="card expandable">A - Arms<div class="extra">Weakness</div></div>
+        <div class="card expandable">S - Speech<div class="extra">Difficulty speaking</div></div>
+        <div class="card danger expandable">T - Time ⚠️<div class="extra">Call emergency immediately</div></div>
+      </div>
     </div>
   </section>
 
-  <!-- RISK FACTORS -->
+  <!-- RISK -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Risk Factors</h2>
+    <div class="glass">
+      <h2 onclick="toggleSection(this)">Risk Factors</h2>
 
-    <div class="grid hidden-content">
-      <div class="card">High Blood Pressure</div>
-      <div class="card">Smoking</div>
-      <div class="card">Diabetes</div>
-      <div class="card">High Cholesterol</div>
-      <div class="card">Obesity</div>
-      <div class="card">Overdrinking</div>
+      <div class="grid hidden-content">
+        <div class="card">High Blood Pressure</div>
+        <div class="card">Smoking</div>
+        <div class="card">Diabetes</div>
+        <div class="card">High Cholesterol</div>
+        <div class="card">Obesity</div>
+        <div class="card">Overdrinking</div>
+      </div>
     </div>
   </section>
 
@@ -94,56 +108,62 @@
     <div class="glass collapsible">
       <h2 onclick="toggleSection(this)">Sino ang maaaring magkaroon ng stroke?</h2>
       <div class="hidden-content">
-        <ul>
-          <li>Mga may edad na</li>
-          <li>Mataas na blood pressure</li>
-          <li>Sobra sa pag-inom ng alak</li>
-          <li>Naninigarilyo</li>
-          <li>Obese</li>
-          <li>Mataas na cholesterol</li>
-          <li>May diabetes</li>
-          <li>May sakit sa puso</li>
-          <li>Gumagamit ng ilegal na droga</li>
-        </ul>
+        <div class="card">
+          <ul>
+            <li>Mga may edad na</li>
+            <li>Mataas na blood pressure</li>
+            <li>Sobra sa pag-inom ng alak</li>
+            <li>Naninigarilyo</li>
+            <li>Obese</li>
+            <li>Mataas na cholesterol</li>
+            <li>May diabetes</li>
+            <li>May sakit sa puso</li>
+            <li>Gumagamit ng ilegal na droga</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PREVENTION -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Paano Maiiwasan ang Stroke?</h2>
+    <div class="glass">
+      <h2 onclick="toggleSection(this)">Paano Maiiwasan ang Stroke?</h2>
 
-    <div class="grid hidden-content">
-      <div class="card">Blood Pressure Control</div>
-      <div class="card">Healthy Diet</div>
-      <div class="card">Exercise</div>
+      <div class="grid hidden-content">
+        <div class="card">Blood Pressure Control</div>
+        <div class="card">Healthy Diet</div>
+        <div class="card">Exercise</div>
+      </div>
     </div>
   </section>
 
   <!-- TREATMENT -->
   <section class="section">
-    <h2 onclick="toggleSection(this)">Paano Ginagamot ang Stroke?</h2>
+    <div class="glass">
+      <h2 onclick="toggleSection(this)">Paano Ginagamot ang Stroke?</h2>
 
-    <div class="grid hidden-content">
-      <div class="card expandable">
-        <h3>Ischemic Stroke</h3>
-        <ul>
-          <li>tPA</li>
-          <li>Thrombectomy</li>
-          <li>Antiplatelets</li>
-        </ul>
-        <div class="extra">Clot removal restores blood flow.</div>
-      </div>
+      <div class="grid hidden-content">
+        <div class="card expandable">
+          <h3>Ischemic Stroke</h3>
+          <ul>
+            <li>tPA</li>
+            <li>Thrombectomy</li>
+            <li>Antiplatelets</li>
+          </ul>
+          <div class="extra">Clot removal restores blood flow.</div>
+        </div>
 
-      <div class="card expandable">
-        <h3>Hemorrhagic Stroke</h3>
-        <ul>
-          <li>Blood pressure control</li>
-          <li>Surgery</li>
-          <li>Hematoma removal</li>
-          <li>Craniotomy</li>
-        </ul>
-        <div class="extra">Stops bleeding and reduces pressure.</div>
+        <div class="card expandable">
+          <h3>Hemorrhagic Stroke</h3>
+          <ul>
+            <li>Blood pressure control</li>
+            <li>Surgery</li>
+            <li>Hematoma removal</li>
+            <li>Craniotomy</li>
+          </ul>
+          <div class="extra">Stops bleeding and reduces pressure.</div>
+        </div>
       </div>
     </div>
   </section>
