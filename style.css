@@ -17,6 +17,30 @@
   z-index: -2;
 }
 
+/* FLOATING HEADER (FLORA STYLE) */
+.floating-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 14px 22px;
+  border-radius: 14px;
+  z-index: 20;
+  color: white;
+  backdrop-filter: blur(10px);
+  animation: fadeInDown 1s ease-out;
+}
+
+.floating-header h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.floating-header span {
+  color: #f87171;
+}
+
 /* FLOATING CIRCLES */
 .circle {
   position: absolute;
@@ -65,34 +89,59 @@
 
 /* HERO */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 60px;
   color: white;
-  opacity: 0;
-  transform: scale(1.05);
-  transition: all 1s ease;
-}
-
-.hero.hero-show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.hero h1 {
-  font-size: 42px;
-  font-weight: 800;
-}
-
-.hero .sub {
-  margin-top: 10px;
 }
 
 /* HERO BOX */
-.hero-box {
+.hero-title-box {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  padding: 40px 50px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: slideInLeft 1.2s ease-out;
+  max-width: 600px;
+}
+
+.hero-title-box h2 {
+  font-size: 44px;
+  margin: 0;
+  font-weight: 900;
+}
+
+.hero-title-box h1 {
+  font-size: 28px;
+  margin: 10px 0;
+  color: #f87171;
+}
+
+.hero-title-box p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+.hero-btn {
   margin-top: 20px;
-  padding: 40px;
-  border: 2px dashed white;
-  border-radius: 12px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #dc2626;
+  color: white;
+  transition: 0.3s ease;
+  animation: floatUpDown 3s infinite ease-in-out;
+}
+
+.hero-btn:hover {
+  background: #ef4444;
+  transform: scale(1.05);
 }
 
 /* SECTIONS */
@@ -156,4 +205,20 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+}
+
+/* ANIMATIONS */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUpDown {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
