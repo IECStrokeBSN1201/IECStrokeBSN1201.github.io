@@ -220,12 +220,29 @@ h2 {
 }
 
 /* FOOTER */
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer-content p {
+  margin: 6px 0;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.footer-content strong {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+/* subtle separation feel */
 footer {
   background: #dc2626;
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 30px 20px;
+  margin-top: 60px;
 }
 
 /* ANIMATIONS */
