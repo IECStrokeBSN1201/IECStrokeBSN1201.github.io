@@ -153,9 +153,24 @@
 
 h2 {
   color: #dc2626;
-  font-size: 26px;
-  margin-bottom: 20px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+/* ADD UNDERLINE ACCENT */
+h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #ef4444;
+  margin-top: 8px;
+  border-radius: 4px;
 }
 
 /* GLASS */
