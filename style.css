@@ -2,7 +2,7 @@
 .bg-fixed {
   position: fixed;
   inset: 0;
-  background-image: url("webbg.jpg");
+  background-image: url("websitebg.jpg");
   background-size: cover;
   background-position: center;
   filter: blur(10px) brightness(0.55);
