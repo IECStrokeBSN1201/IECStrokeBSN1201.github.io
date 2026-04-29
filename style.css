@@ -260,3 +260,86 @@ footer {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
+@media (max-width: 1024px) {
+
+  /* HEADER */
+  .floating-header {
+    position: static;
+    margin: 15px;
+    text-align: center;
+  }
+
+  /* HERO */
+  .hero {
+    height: auto;
+    padding: 100px 20px 60px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-title-box {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+
+  .hero-title-box h2 {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .hero-title-box h1 {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+
+  .hero-title-box p {
+    font-size: clamp(13px, 2.5vw, 15px);
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 40px 20px;
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: clamp(28px, 5vw, 40px);
+    margin: 40px 0 30px;
+  }
+
+  /* GLASS */
+  .glass {
+    padding: 15px;
+  }
+
+  /* GRID → ALWAYS STACK CLEANLY */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FORCE 1 COLUMN ON SMALLER PHONES */
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* CARDS */
+  .card {
+    padding: 15px;
+  }
+
+  /* REMOVE FLOATING DECORATIONS (CAUSE OVERFLOW) */
+  .circle {
+    display: none;
+  }
+
+  /* FOOTER */
+  .footer-content {
+    text-align: center;
+  }
+}
