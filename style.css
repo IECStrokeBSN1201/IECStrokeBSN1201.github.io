@@ -344,86 +344,53 @@ footer {
   }
 }
 
-/* DROPDOWN INSIDE CARD */
-.card-extra {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  margin-top: 10px;
-  opacity: 0;
-}
-
-.card.active .card-extra {
-  max-height: 500px;
-  opacity: 1;
-}
-
-/* SHARED DROPDOWN */
-.shared-dropdown {
-  max-width: 1100px;
-  margin: 10px auto 40px;
-  padding: 0 20px;
-
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-/* ACTIVE STATE */
-.shared-dropdown.show {
-  max-height: 500px;
-  opacity: 1;
-  padding: 20px;
-}
-
-/* DESIGN FOR DROPDOWN CONTENT */
-.shared-dropdown {
-  background: rgba(255,255,255,0.9);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  color: black;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-/* EXPANDABLE CARD CONTENT */
+/* =========================
+   CLEAN EXPANDABLE CARD
+========================= */
 .card-extra {
   max-height: 0;
   overflow: hidden;
   margin-top: 10px;
-  transition: all 0.4s ease;
   opacity: 0;
   font-size: 14px;
+  transition: all 0.4s ease;
 }
 
-/* WHEN ACTIVE */
 .card.active .card-extra {
   max-height: 500px;
   opacity: 1;
 }
 
-/* SHARED DROPDOWN */
+/* =========================
+   ACTIVE CARD STYLE
+========================= */
+.card.active {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   SHARED DROPDOWN (FIXED)
+========================= */
 .shared-dropdown {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 20px;
+  max-width: 1100px;
+  margin: 15px auto 40px;
   padding: 0 20px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  color: black;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transition: all 0.4s ease;
 }
 
-/* SHOW DROPDOWN */
 .shared-dropdown.show {
   max-height: 300px;
   opacity: 1;
-  background: rgba(255,255,255,0.95);
-  border-radius: 12px;
-  padding: 15px 20px;
-  color: black;
-}
-
-/* ACTIVE CARD VISUAL */
-.card.active {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  padding: 20px;
 }
